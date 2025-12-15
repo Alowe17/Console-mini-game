@@ -33,7 +33,7 @@ public class DAO {
                         rs.getString("password"),
                         rs.getString("email"),
                         rs.getString("phone"),
-                        rs.getDate("brithdate").toLocalDate(),
+                        rs.getDate("birthdate").toLocalDate(),
                         Enum.valueOf(Role.class, rs.getString("role")),
                         rs.getInt("balance")
                 );

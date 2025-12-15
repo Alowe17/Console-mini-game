@@ -4,6 +4,7 @@ import game.dao.DAO;
 import game.exceptions.BaseException;
 import game.exceptions.GlobalExceptionHandler;
 import game.model.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.Scanner;
 
@@ -28,7 +29,7 @@ public class LoginService {
             return null;
         }
 
-        if (!user.getPassword().equals(password)) {
+        if (BCrypt.checkpw(password, user.getPassword())) {
             return null;
         }
 
